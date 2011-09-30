@@ -1,22 +1,27 @@
 === Plugin Name ===
 Contributors: warren.brown
 Donate link: http://www.flmnh.ufl.edu/
-Tags: UF, UFAD
+Tags: UF, UFAD, Shibboleth
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
 
 == Description ==
 
+This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
+The web page for this plugin is
+http://www.flmnh.ufl.edu/omt/omtforge/ugrm.php 
+
 Since this plugin extends the Shibboleth plugin, you must first have the Shibboleth plugin, available from http://wordpress.org/extend/plugins/shibboleth/
 installed and activated. Otherwise, the plugin will fail to activate as the shibboleth_user_role filter hook will not be registered.
 
 To use this plugin, you must already have the following setup on your server:
-1. The above Shibbleth plugin.
-2. UF Shibboleth ARP-Groups associated with your URN
-3. A UFAD group created for each of the Wordpress roles (administrator, editor, author, contributor, and subscriber).
+
+ * The above Shibbleth plugin.
+ * UF Shibboleth ARP-Groups associated with your URN
+ * A UFAD group created for each of the Wordpress roles (administrator, editor, author, contributor, and subscriber).
 
 == Installation ==
 
@@ -48,15 +53,23 @@ Contact the plugin author(s), who will respond in a vague and unspecified amount
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
+1. Plugins page screenshot
+2. Plugin options page screenshot
 
 == Changelog ==
 
+= 1.1 = 
+ * Tweaked the readme for better presentation on the Wordress site. No
+ * change in plugin.
+
 = 1.0 =
-* Initial Release
+* Initial release
 
 == Upgrade Notice ==
+
+= 1.1 = 
+Tweaked the readmen for better presentation on the Wordpress site. No change
+in plugin.
 
 = 1.0 =
 Initial Release. 
