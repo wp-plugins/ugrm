@@ -1,0 +1,75 @@
+=== Plugin Name ===
+Contributors: warren.brown
+Donate link: http://www.flmnh.ufl.edu/
+Tags: UF, UFAD, Shibboleth
+Requires at least: 3.2.1
+Tested up to: 3.2.1
+Stable tag: 1.1
+
+This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
+
+== Description ==
+
+This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
+The web page for this plugin is
+http://www.flmnh.ufl.edu/omt/omtforge/ugrm.php 
+
+Since this plugin extends the Shibboleth plugin, you must first have the Shibboleth plugin, available from http://wordpress.org/extend/plugins/shibboleth/
+installed and activated. Otherwise, the plugin will fail to activate as the shibboleth_user_role filter hook will not be registered.
+
+To use this plugin, you must already have the following setup on your server:
+
+ * The above Shibbleth plugin.
+ * UF Shibboleth ARP-Groups associated with your URN
+ * A UFAD group created for each of the Wordpress roles (administrator, editor, author, contributor, and subscriber).
+
+== Installation ==
+
+1. Install, activate, configure and test the Shibbloeth plugin. When it is working, procede.
+1. Create a UGRM directory in `/wp-content/plugins/` directory
+1. Extract the contents of the UGRM.tar.gz plugin archive to the `/wp-content/plugins/UGRM` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Populate the 'UFAD Groups to Roles' options page under the 'Settings' menu in Wordpress.
+
+== Frequently Asked Questions ==
+
+= It's not working. What should I check? =
+
+First, check for typos on the options page and ensure you've spelled your UFAD groups correctly.
+
+Second, double check that your Shibboleth SP is vending the UFADGroupsDN attribute from ARP-Groups.
+Refer to the UF Shibboleth PHP code examples at http://www.it.ufl.edu/identity/shibboleth/technicalcodeexamples.html
+for ideas. If you are unsure what this means, have an adult do this for you.
+
+`If $_SERVER['UFADGroupsDN']` is not present, then complete the correct application to add ARP-Groups to your UF Shibboleth URN.
+
+If you verify `$_SERVER['UFADGroupsDN']` is present, check for the value(s) you entered on the plugin options page. If they are not present,
+you have UFAD group membership problem. If they are present, check for special characters. The plugin only allows a-z, A-Z, 0-9 and - (as in a hyphen or dash).
+If you've used other characters, rename the group to elimated the disallowed characters.
+
+= What if I've done all that and it still doesn't work? =
+
+Contact the plugin author(s), who will respond in a vague and unspecified amount of time.
+
+== Screenshots ==
+
+1. Plugins page screenshot
+2. Plugin options page screenshot
+
+== Changelog ==
+
+= 1.1 = 
+ * Tweaked the readme for better presentation on the Wordress site. No
+ * change in plugin.
+
+= 1.0 =
+* Initial release
+
+== Upgrade Notice ==
+
+= 1.1 = 
+Tweaked the readmen for better presentation on the Wordpress site. No change
+in plugin.
+
+= 1.0 =
+Initial Release. 
