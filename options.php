@@ -21,12 +21,21 @@ function UGRM_page_builder() {
     update_option('UGRM_author_role', UGRM_define_post_var('UGRM_author_role'));
     update_option('UGRM_contributor_role', UGRM_define_post_var('UGRM_contributor_role'));
     update_option('UGRM_subscriber_role', UGRM_define_post_var('UGRM_subscriber_role'));
-  ?>
+        
+    if((isset($_POST[UGRM_return_target_to_HTTPS]) && $_POST[UGRM_return_target_to_HTTPS])== 'checked') {
+      update_option('UGRM_return_target_to_HTTPS', UGRM_define_post_var('UGRM_return_target_to_HTTPS'));
+    }
+    else {
+      update_option('UGRM_return_target_to_HTTPS', '');
+    }
+    
+   ?>
     <div id="message" class="updated fade">
     <p><strong><?php _e('Options Saved.', 'UGRM_header'); ?> </strong></p></div>
   <?php
-  }
-
+   }
+   $my_test = str_replace('http','https','http://lalala');
+   echo $my_test;
 ?>
  <div class="wrap">
   <h2><?php _e('A&W Productions UFAD to Wordpress Roles Munger Options', 'UGRM_header'); ?></h2>
@@ -61,12 +70,20 @@ function UGRM_page_builder() {
      <tr valign="top">
        <th scope="row">UFAD Group for Subscriber Role</th>
        <td><input type="text" name="UGRM_subscriber_role" value="<?php echo get_option('UGRM_subscriber_role'); ?>"/></td>
-    </tr>    
+    </tr>
+     
+     <tr valign="top">
+        <th scope="row">Force Shibboleth return target to HTTPS</th>
+        <td><input type="checkbox" name="UGRM_return_target_to_HTTPS" value="checked" <?php echo get_option("UGRM_return_target_to_HTTPS") ; ?>/></td>
+     </tr>
   </table>
   
   <p class="submit">
     <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
   </p>
+  <p>The force return target to HTTPS option allows you to override the default Shibboleth behavior of constructing the return target using current protocol. For example,
+  if you clicked the login link from HTTP, your return target would use HTTP. Check the box above to always use a return target using HTTPS regardless if the login link was
+  clicked on an HTTP page. This is allows you to seemlessly deliver content pages via HTTP and enforce HTTPS formanagement pages.</p>
   <p>This plugin was imaginated into existence by the creative IT genius of <a href="mailto:wbrown@flmnh.ufl.edu">Warren Hypnotoad Brown</a>
   and <a href="mailto:andy.lievertz@flmnh.ufl.edu">Andy Lievertz</a> with inspiration from our beloved Dickinson Hall mascot of OctoCarnage.</p>
 </div>
