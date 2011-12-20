@@ -6,7 +6,7 @@ Requires at least: 3.2.1
 Tested up to: 3.2.1
 Stable tag: 1.4
 
-This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
+This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida. Developed at the Florida Museum of Natural History.
 
 == Description ==
 
