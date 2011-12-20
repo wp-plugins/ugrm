@@ -4,7 +4,7 @@ Donate link: http://www.flmnh.ufl.edu/
 Tags: UF, UFAD
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 1.4
+Stable tag: 1.5
 
 This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida. Developed at the Florida Museum of Natural History.
 
@@ -48,10 +48,13 @@ Contact the plugin author(s), who will respond in a vague and unspecified amount
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
+1.  Plugin Screenshot
+2.  Plugin Config Options
 
 == Changelog ==
+= 1.5 =
+ * Fixed header in UGRM.php to resolve current version display on Wordpress site.
+ 
 = 1.4 =
  * Attempting to correct Wordpress SVN tagging for current
  
@@ -71,6 +74,9 @@ HTTP, your return target would be for HTTP.  UGRM now allows you to overide this
 * Initial Release
 
 == Upgrade Notice ==
+= 1.5 =
+Fixed header in UGRM.php to resolve current version display on Wordpress site.
+
 = 1.4 =
 Attemtpin to correct the Wordpress SVN current version labeling
 
