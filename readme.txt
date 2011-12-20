@@ -4,7 +4,7 @@ Donate link: http://www.flmnh.ufl.edu/
 Tags: UF, UFAD
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida.
 
@@ -52,6 +52,8 @@ Contact the plugin author(s), who will respond in a vague and unspecified amount
 the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
 
 == Changelog ==
+=1.2=
+*New version number to resolve wonkyness with Wordpress SVN.
 
 =1.1=
 *Added a configuration option for requiring HTTPS on the return target. This hooks into the Shibboleth provided shibboleth_seesion_initiator_url filter and ensures
@@ -63,6 +65,8 @@ HTTP, your return target would be for HTTP.  UGRM now allows you to overide this
 * Initial Release
 
 == Upgrade Notice ==
+=New version number to resolved wonkyness with Wordpress SVN.
+
 =1.1=
 Added functionality to allow UGRM to override return login target to always be HTTPS.
 
