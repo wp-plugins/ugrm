@@ -3,7 +3,7 @@
 Plugin Name: UGRM - UFAD Groups to Roles Munger
 Plugin URI: http://www.flmnh.ufl.edu/omt/omtforge
 Description: Andy & Warren's University of Florida Shibboleth UFAD Groups Munger for Wordpress
-Version: 1.0
+Version: 1.5
 Author: Warren Hypnotoad Brown
 Author URI: http://www.flmnh.ufl.edu/omt/omtforge
 License: GPL2
