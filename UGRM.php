@@ -43,6 +43,18 @@ function UGRM_munge_UFAD_Groups2Roles($user_role) {
 
 add_filter ( 'shibboleth_user_role', 'UGRM_munge_UFAD_Groups2Roles' );
 
+function UGRM_munge_return_target_to_HTTPS($initiator_url) {
+    if(get_option('UGRM_return_target_to_HTTPS')=="checked") {
+        $initiator_url=str_replace('target=http','target=https',$initiator_url);
+        return $initiator_url;
+    }
+    else {
+        return $initiator_url;
+    }
+}
+
+add_filter ('shibboleth_session_initiator_url', 'UGRM_munge_return_target_to_HTTPS');
+
 /*  Copyright 2011 Warren Brown/University of Florida  (warrenbrown@ufl.edu)
 
     This program is free software; you can redistribute it and/or modify
