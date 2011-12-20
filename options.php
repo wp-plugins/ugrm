@@ -34,8 +34,6 @@ function UGRM_page_builder() {
     <p><strong><?php _e('Options Saved.', 'UGRM_header'); ?> </strong></p></div>
   <?php
    }
-   $my_test = str_replace('http','https','http://lalala');
-   echo $my_test;
 ?>
  <div class="wrap">
   <h2><?php _e('A&W Productions UFAD to Wordpress Roles Munger Options', 'UGRM_header'); ?></h2>
