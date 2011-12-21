@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: warren.brown
 Donate link: http://www.flmnh.ufl.edu/
-Tags: UF, UFAD
+Tags: UF, UFAD authentication, login, SAML, shibboleth
 Requires at least: 3.2.1
 Tested up to: 3.2.1
 Stable tag: 1.5
