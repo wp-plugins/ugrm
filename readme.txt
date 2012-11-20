@@ -4,7 +4,7 @@ Donate link: http://www.flmnh.ufl.edu/
 Tags: UF, UFAD authentication, login, SAML, shibboleth
 Requires at least: 3.2.1
 Tested up to: 3.4.2
-Stable tag: 1.7
+Stable tag: 1.7.1
 
 This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida. Developed at the Florida Museum of Natural History.
 
@@ -53,6 +53,9 @@ Contact the plugin author(s), who will respond in a vague and unspecified amount
 2.  Plugin Config Options
 
 == Changelog ==
+= 1.7.1 =
+* Corrected typo in code. Minor fix, but very large impact.
+
 = 1.7 =
 * Discovered that with multisite enabled, the server variables will sometimes present as prepended with REDIRCT_ when in a subsite. E.G. UFADGroupsDN will sometimes appear
 REDIRECT_UFADGroupsDN. The code has been extended to accomdate this.

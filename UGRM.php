@@ -3,7 +3,7 @@
 Plugin Name: UGRM - UFAD Groups to Roles Munger
 Plugin URI: http://www.flmnh.ufl.edu/omt/omtforge
 Description: Andy & Warren's University of Florida Shibboleth UFAD Groups Munger for Wordpress
-Version: 1.7
+Version: 1.7.1
 Author: Warren Hypnotoad Brown
 Author URI: http://www.flmnh.ufl.edu/omt/omtforge
 License: GPL2
@@ -28,7 +28,7 @@ function UGRM_munge_UFAD_Groups2Roles($user_role) {
         //We've discovered with Wordpress Multisite enabled the HTTP_UFADGROUPSDN is sometimes
         //prepended wth REDIRECT when there is an internal Apache or PHP redirect. To accomodate
         //this behavior, we extended the original if statement with an elseif.
-        elseif (isset($_SERVER['HTTP_UFADGROUPSDN'])) {
+        elseif (isset($_SERVER['UFADGroupsDN'])) {
             $UFADGroupsDN = $_SERVER['UFADGroupsDN'];    
         }
 	else {
