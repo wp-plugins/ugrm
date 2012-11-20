@@ -3,8 +3,8 @@ Contributors: warren.brown
 Donate link: http://www.flmnh.ufl.edu/
 Tags: UF, UFAD authentication, login, SAML, shibboleth
 Requires at least: 3.2.1
-Tested up to: 3.2.1
-Stable tag: 1.6
+Tested up to: 3.4.2
+Stable tag: 1.7
 
 This plugin extends the Shibboleth plugin to work with UFAD & Shibboleth at the University of Florida. Developed at the Florida Museum of Natural History.
 
@@ -53,6 +53,12 @@ Contact the plugin author(s), who will respond in a vague and unspecified amount
 2.  Plugin Config Options
 
 == Changelog ==
+= 1.7 =
+* Discovered that with multisite enabled, the server variables will sometimes present as prepended with REDIRCT_ when in a subsite. E.G. UFADGroupsDN will sometimes appear
+REDIRECT_UFADGroupsDN. The code has been extended to accomdate this.
+*As a side note, the Shibboleth plugin UGRM extends appears to have been abandoned. As we've already made code changes to enable the Shibboleth plugin to work
+with the new Wordpress enabled for multisite, and we had to graft on further changes for the REDIRECT_ behavior, we plan to release a fork of the Shibboleth plugin.
+
 = 1.6 =
  * Fixed a glaring bug in when "Force Shibboleth return target to HTTPS" was checked and return target was already https the target would be munged to httpss.
  * Discovered Shibboleth on IIS prepends all Shibboleth server variables with a HTTP_ prefix because the variables are populated via CGI as IIS does not support

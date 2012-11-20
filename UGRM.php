@@ -3,7 +3,7 @@
 Plugin Name: UGRM - UFAD Groups to Roles Munger
 Plugin URI: http://www.flmnh.ufl.edu/omt/omtforge
 Description: Andy & Warren's University of Florida Shibboleth UFAD Groups Munger for Wordpress
-Version: 1.6
+Version: 1.7
 Author: Warren Hypnotoad Brown
 Author URI: http://www.flmnh.ufl.edu/omt/omtforge
 License: GPL2
@@ -12,7 +12,7 @@ License: GPL2
 require_once dirname(__FILE__) . '/options.php';
 
 function UGRM_munge_UFAD_Groups2Roles($user_role) {
-    if (isset($_SERVER['UFADGroupsDN']) || isset($_SERVER['HTTP_UFADGROUPSDN'])) {
+    if (isset($_SERVER['UFADGroupsDN']) || isset($_SERVER['HTTP_UFADGROUPSDN']) || isset($_SERVER['REDIRECT_UFADGroupsDN'])) {
         $UGRM_admin_role = get_option('UGRM_admin_role');
         $UGRM_editor_role = get_option('UGRM_editor_role');
         $UGRM_author_role = get_option('UGRM_author_role');
@@ -24,10 +24,16 @@ function UGRM_munge_UFAD_Groups2Roles($user_role) {
         //for details. Thus we check for IIS.
         if (strpos($_SERVER['SERVER_SOFTWARE'], 'IIS')) {
             $UFADGroupsDN = $_SERVER['HTTP_UFADGROUPSDN']; 
-        }        
-        else {
+        }
+        //We've discovered with Wordpress Multisite enabled the HTTP_UFADGROUPSDN is sometimes
+        //prepended wth REDIRECT when there is an internal Apache or PHP redirect. To accomodate
+        //this behavior, we extended the original if statement with an elseif.
+        elseif (isset($_SERVER['HTTP_UFADGROUPSDN'])) {
             $UFADGroupsDN = $_SERVER['UFADGroupsDN'];    
         }
+	else {
+	    $UFADGroupsDN = $_SERVER['REDIRECT_UFADGroupsDN'];	
+	}
         if (strpos($UFADGroupsDN, $UGRM_admin_role)) {
             $user_role = "administrator";
         }
@@ -57,6 +63,8 @@ function UGRM_munge_return_target_to_HTTPS($initiator_url) {
        if (!strpos($initiator_url,'target=https') ){
             $initiator_url=str_replace('target=http','target=https',$initiator_url);
        }
+        //echo "<h1>$initiator_url</h1>\n";
+        //die();
         return $initiator_url;
     }
     else {
